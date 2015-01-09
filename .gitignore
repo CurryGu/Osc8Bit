@@ -22,3 +22,4 @@ proguard-project.txt
 project.properties
 res/values-v11/styles.xml
 res/values-v14/styles.xml
+src/com/example/osc8bit/MyClass.java
