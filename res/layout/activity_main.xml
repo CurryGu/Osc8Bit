@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+    >
+
+    <TextView
+        android:id="@+id/info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#000000" />
+    <HorizontalScrollView 
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        >
+        <LinearLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <Button
+                 android:layout_width="wrap_content"
+            	 android:layout_height="wrap_content" 
+                 android:text="打开"
+                 android:id="@+id/open_bt"	
+                />
+            <Button
+                 android:layout_width="wrap_content"
+            	 android:layout_height="wrap_content" 
+                 android:text="关闭"
+                 android:id="@+id/close_bt"	
+                />
+            <Button
+                 android:layout_width="wrap_content"
+            	 android:layout_height="wrap_content" 
+                 android:text="配对"
+                 android:id="@+id/pair_bt"	
+                />
+            <Button
+                 android:layout_width="wrap_content"
+            	 android:layout_height="wrap_content" 
+                 android:text="扫描"
+                 android:id="@+id/scan_bt"	
+                />
+            <Button
+                 android:layout_width="wrap_content"
+            	 android:layout_height="wrap_content" 
+                 android:text="断开"
+                 android:id="@+id/shut_bt"	
+                />
+        </LinearLayout>
+    </HorizontalScrollView>
+     <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#000000" />
+     <ListView
+	    android:id="@+id/listOfDevice"
+    	android:layout_width="match_parent"
+    	android:layout_height="wrap_content"/>
+    
+</LinearLayout>
+

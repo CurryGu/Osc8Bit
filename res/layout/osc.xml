@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:layout_width="700px"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+        
+		<com.example.osc8bit.WaveFormView 
+		   android:id="@+id/waveformview"
+		   android:layout_width="match_parent"
+		   android:layout_height="500px"/>
+        
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+			
+            <RadioGroup
+                android:id="@+id/radiogroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:orientation="horizontal" >
+ 			<!-- 权重为2，设置两个radiobutton -->
+
+                <RadioButton
+                    android:id="@+id/rb_CH1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:onClick="setCHMode"
+                    android:text="CH1" />
+
+                <RadioButton
+                    android:layout_marginLeft="120px"
+                    android:id="@+id/rb_CH2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="false"
+                    android:onClick="setCHMode"
+                    android:text="CH2" />
+            </RadioGroup>
+
+            <CheckBox
+                android:layout_marginLeft="120px"
+                android:id="@+id/cb_CHAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:onClick="setChannelAll"
+                android:text="双通道" />
+        </LinearLayout>
+    </LinearLayout>
+    <View
+        android:layout_width="2dp"
+        android:layout_height="fill_parent"
+        android:background="#000000" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal" >
+
+        <TableLayout
+            android:layout_width="200dp"
+            android:layout_height="match_parent" >
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/osc_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:text="info:welcome" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#000000" />
+
+            <TableRow>
+
+                <Button
+                    android:id="@+id/bt_connect"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:text="连接" />
+
+                <Button
+                    android:id="@+id/bt_messure"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="测量" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#000000" />
+
+            <TableRow>
+                <Button
+                    android:id="@+id/x_little"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:text="x《" />
+
+                <Button
+                    android:id="@+id/x_bigger"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:text="x 》" />
+            </TableRow>
+            <TableRow>
+                <Button
+                    android:id="@+id/y_little"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:text="y《" />
+
+                <Button
+                    android:id="@+id/y_bigger"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:text="y 》" />
+            </TableRow>
+             <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#000000" />
+            <TableRow>
+               <TextView
+				android:text="X轴(us):"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"/>
+		    <TextView
+				android:id="@+id/timer_info"
+				android:singleLine="true"
+				android:text="100000"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"/>
+            </TableRow>
+             <TableRow>
+                 <TextView
+				android:text="Y轴(mv):"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"/>
+		    <TextView
+				android:id="@+id/Vol_info"
+				android:singleLine="true"
+				android:text="647"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"/>
+            </TableRow>
+            <TableRow>
+               <TextView
+				android:text="频率(Hz):"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"/>
+		    <TextView
+				android:text="0"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"/>
+            </TableRow>
+             <View
+                android:layout_width="fill_parent"
+                android:layout_height="2dp"
+                android:background="#000000" />
+             <TableRow >
+		    <Button
+				android:id="@+id/but_mes_X"
+				android:layout_width="80dp"
+				android:layout_height="wrap_content"
+				android:text="X-on"/>
+			<Button
+				android:id="@+id/but_mes_Y"
+				android:layout_width="80dp"
+				android:layout_height="wrap_content"
+				android:text="Y-on"/>
+		</TableRow>
+		<TableRow >
+		    <TextView
+				android:text="mes_X(us):"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"/>
+		    <TextView
+				android:id="@+id/text_mes_X"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"/>
+		</TableRow>
+		<TableRow >
+		    <TextView
+				android:text="mes_Y(mv):"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"/>
+		    <TextView
+				android:id="@+id/text_mes_Y"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"/>
+		</TableRow>
+		<View
+		    android:layout_marginTop="10dp"
+			android:background="#000000"
+	   		android:layout_width="match_parent"
+			android:layout_height="2dp"/>
+		
+        </TableLayout>
+        <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:background="#000000" />
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+            <TableRow>
+                <Button
+                    android:layout_marginTop="19dp"
+                    android:id="@+id/decrease_0.5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="衰减0.5" />
+            </TableRow>
+            <TableRow>
+                <Button
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/decrease_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="衰减1" />
+            </TableRow>
+            <TableRow>
+
+                <Button
+                    android:id="@+id/decrease_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="衰减2" />
+
+            </TableRow>
+            <TableRow>
+                <Button
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/decrease_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="衰减4" />
+            </TableRow>
+            <TableRow >
+			  	<Button
+					android:id="@+id/but_save"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="保存波形"/>
+			</TableRow>
+        </TableLayout>
+    </LinearLayout>
+
+</LinearLayout>
